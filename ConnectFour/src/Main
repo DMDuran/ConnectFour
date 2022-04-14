@@ -1,0 +1,20 @@
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Board boardGame= new Board();
+		boardGame.printBoard();
+		boardGame.addPiece( 0,"x");
+		boardGame.addPiece( 0,"x");
+		boardGame.addPiece( 2,"o");
+		
+		
+		boardGame.printBoard();
+
+		
+
+	}
+
+}
