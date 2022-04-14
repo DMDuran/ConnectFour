@@ -1,3 +1,6 @@
+
+import javax.swing.JLabel;
+
 /**
  * 
  */
@@ -8,12 +11,19 @@
  */
 public class HighScoreBox {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	
+		int score = 0;
+		
+		JLabel scoreLabel = new JLabel("Score: 0");
+		
+		public void someoneScored() {
+			
+		score++;
+		
+		scoreLabel.setText("Score: " + score++);
+		
+		
+		}
+		
 
 }
