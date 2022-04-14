@@ -1,0 +1,60 @@
+public class Board {
+	
+	private int rows = 6;
+	private int collumns = 7;
+	int row=0;
+	int colToAdd;
+	
+	Pieces[][] connect4Board = new Pieces[rows][collumns];
+	
+	
+	public int getRows() {
+		return rows;
+	}
+
+	public int getCollumns() {
+		return collumns;
+	}
+
+	
+	public boolean addPiece( int colToAdd, String color) {
+		if(colToAdd >= 0 && colToAdd < collumns) {
+			if(connect4Board[colToAdd][0]==null) {
+				boolean addThePiece= false;
+				for(int row=rows-1; row>=0; row--)
+					if(connect4Board[row][colToAdd]==null) {
+						connect4Board[row][colToAdd]= new Pieces();
+						connect4Board[row][colToAdd].setColor(color);
+						addThePiece=true;
+						break;
+					}
+				return addThePiece;
+			}else {
+				System.out.println("This collumn is full, please try again.");
+				return false;
+			}
+		}else {System.out.println("This collumn is out of the range, please try again.");
+		return false;
+		}
+		
+	}
+	
+		
+	public void printBoard(){
+		System.out.println("----------------------------");
+		for(int row=0; row < rows; row++) {
+		System.out.print("|");
+		
+		for(int col=0; col < collumns; col++ ) {
+			if(connect4Board[row][col]==null) {
+				System.out.print("_");
+			}else {
+				System.out.print(connect4Board[row][col].getColor());
+		}
+			System.out.print("|");
+	}
+			System.out.println();
+	}
+		
+}
+}
